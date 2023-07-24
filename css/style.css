@@ -1,0 +1,218 @@
+/* Start Global Style */
+*{
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* Start Variables */
+:root{
+  --black:#333;
+  --white:#fff;
+}
+
+.dark{
+  --white:#333;
+  --black:#fff;
+}
+/* Start header Style */
+header{
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 40px 100px;
+  z-index: 10000;
+}
+
+header .logo{
+  display: inline-flex;
+  text-decoration: none;
+  position: relative;
+  color: var(--black);
+  font-size: 2em;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+header .rightSide{
+  display: flex;
+}
+
+header .rightSide .btns{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+header .rightSide .btns i{
+  color: var(--black);
+  font-size: 1.5em;
+}
+
+header .rightSide .btns.menuToggle{
+ font-size: 1.2em;
+}
+
+header .rightSide .btns i:nth-child(2){
+  display: none;
+}
+
+header .rightSide .btns.active i:nth-child(2){
+  display: block;
+}
+header .rightSide .btns.active i:nth-child(1){
+  display: none;
+}
+
+/* Start main Section Style */
+.main{
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main video{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.mask{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: screen;
+  user-select: none;
+}
+
+.dark .mask{
+  filter: invert(1);
+  mix-blend-mode: multiply;
+}
+
+.main h2{
+  position: relative;
+  z-index: 3;
+  font-size: 14vw;
+  color: #fff;
+  text-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Start Navigation Style */
+.navigation{
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--white);
+  transition: 0.5s;
+}
+
+.navigation.active{
+  left: 0;
+}
+
+.navigation li{
+  list-style: none;
+}
+
+.navigation li a{
+  display: inline-flex;
+  margin: 5px 0;
+  padding: 5px 20px;
+  font-size: 1.35em;
+  text-decoration: none;
+  color: var(--black);
+  border-radius: 40px;
+  transition: 0.3s;
+}
+
+.navigation li a:hover{
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.copyrightText{
+  position: absolute;
+  left: 100px;
+  bottom: 35px;
+  z-index: 4;
+  color: var(--black);
+  font-weight: 500;
+  font-size: 1.2em;
+}
+
+/* Style the social links */
+.sci{
+  position: absolute;
+  right: 100px;
+  bottom: 30px;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.sci li{
+  list-style: none;
+  margin-bottom: 5px;
+}
+
+
+.sci li a{
+  text-decoration: none;
+  color: var(--black);
+  font-size: 1.75em;
+}
+
+.sci > li:nth-child(1) a{
+  color: #096198; 
+}
+
+.sci > li:nth-child(2) a{
+  color: #c32aa3;
+}
+
+.sci > li:nth-child(3) a{
+  color: #1da1f2;
+}
+
+/* Manipulate the design in responsive view */
+
+@media (max-width:768px){
+  header{
+    padding: 20px;
+  }
+  .copyrightText{
+    left: 20px;
+    bottom: 20px;
+  }
+  .sci{
+    right: 20px;
+    bottom: 10px;
+  }
+}
